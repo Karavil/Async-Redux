@@ -1,4 +1,9 @@
-import { UPDATE_MATCHES } from "../actions/dotaActions";
+import {
+   UPDATE_MATCHES,
+   LOADING_MATCHES,
+   ERROR_LOADING_MATCHES,
+   LOADED_MATCHES
+} from "../actions/dotaActions";
 
 const initialState = {
    proMatches: {
@@ -14,8 +19,34 @@ const dotaReducer = (state = initialState, { type, payload }) => {
          return {
             ...state,
             proMatches: {
-               matches: payload,
-               loading: false
+               matches: payload
+            }
+         };
+      case LOADING_MATCHES:
+         return {
+            ...state,
+            proMatches: {
+               ...state.proMatches,
+               loading: true,
+               error: false
+            }
+         };
+      case LOADED_MATCHES:
+         return {
+            ...state,
+            proMatches: {
+               ...state.proMatches,
+               loading: false,
+               error: false
+            }
+         };
+      case ERROR_LOADING_MATCHES:
+         return {
+            ...state,
+            proMatches: {
+               ...state.proMatches,
+               loading: false,
+               error: true
             }
          };
       default:
