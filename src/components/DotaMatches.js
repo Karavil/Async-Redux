@@ -23,7 +23,10 @@ const DotaMatches = () => {
          {proMatches.loading && !proMatches.error ? (
             <h1>Matches loading...</h1>
          ) : (
-            <>{MatchCards}</>
+            <>
+               <h1>Latest Dota 2 Pro Matches:</h1>
+               {MatchCards}
+            </>
          )}
       </>
    );

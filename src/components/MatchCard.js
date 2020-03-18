@@ -2,16 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = styled.div`
-   border: 1px solid grey;
-   padding: 5px;
+   border: 1px solid #eaeaea;
+   border-radius: 5px;
+
+   padding: 5px 10px;
+
+   margin: 10px 0;
 `;
 
 const MatchCard = ({ match }) => {
    return (
       <Card>
-         <h1>
-            {match.radiant_name} vs {match.dire_name}
-         </h1>
+         <h2>
+            {match.radiant_name || "Radiant"} vs {match.dire_name || "Dire"}
+         </h2>
          <p>
             Score: {match.radiant_score} : {match.dire_score}
          </p>

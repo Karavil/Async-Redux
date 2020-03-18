@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
    }
 
    body {
+      font-family: 'Raleway', sans-serif;
       margin: 0;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -19,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
 const AppContainer = styled.div`
    max-width: 1440px;
    margin: 0 auto;
+   padding: 0 20px;
 `;
 function App() {
    return (
